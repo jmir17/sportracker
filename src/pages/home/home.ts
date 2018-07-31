@@ -14,6 +14,10 @@ export class HomePage {
     this.trainings = new Array();
   }
 
+  public deleteGoal(training: Training): void{
+    this.trainings.splice(this.trainings.indexOf(training),1);
+  }
+
   private generateNewGoal(goal: String): void{
     const train: Training = {
       id: this.trainings.length,
@@ -52,5 +56,4 @@ export class HomePage {
     });
     alert.present();
   }
-
 }
