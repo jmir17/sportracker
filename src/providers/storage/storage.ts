@@ -5,20 +5,12 @@ import Training from '../../models/training';
 @Injectable()
 export class StorageProvider {
   private trainings: Array<Training>;
-  private static instance = new StorageProvider();
-  private storage: Storage;
-  public static getInstance() {
-      return this.instance;
-  }
 
-  //TODO remove dataset envelop
-  private constructor() {
+  constructor(public storage: Storage){
     this.trainings = new Array();
-    this.storage.get('data').then((value) => {
+    storage.get('data').then((value) => {
       const jsonObject = JSON.parse(value);
       this.trainings = jsonObject.dataset;
-    }).catch(err => {
-      console.log('ERROR READING DATA: ' + err);
     });
   }
 
