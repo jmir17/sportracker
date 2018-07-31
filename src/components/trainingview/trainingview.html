@@ -1,0 +1,15 @@
+<!-- Generated template for the TrainingviewComponent component -->
+<div>
+  <h2>{{sample.name}}</h2>
+
+  <ion-list inset>
+    <button ion-item *ngFor="let measure of sample.times">
+      <h1>{{measure.date}} - {{ measure.time }}</h1>
+    </button> 
+  </ion-list>
+
+  <div class="addTime">
+    <ion-input placeholder="Distace, Reps, Weight,..." type="number" step="0.000001" [(ngModel)]="formInput"></ion-input>
+    <button ion-button (click)="addTime()">Add</button>
+  </div>
+</div>

@@ -1,11 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Track timing
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-slides pager>
+    <ion-slide *ngFor="let item of trainings">
+      <trainingview [sample]=item></trainingview>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
