@@ -1,5 +1,6 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import Training from '../../models/training';
+import Measure from '../../models/measure';
 
 /**
  * Generated class for the TrainingviewComponent component.
@@ -13,7 +14,7 @@ import Training from '../../models/training';
 })
 export class TrainingviewComponent {
   @Input() sample: Training;
-  @Output() complete: Training;
+  @Output() complete = new EventEmitter<Training>();
   private formInput: Number;
 
   constructor() {
@@ -21,6 +22,12 @@ export class TrainingviewComponent {
   }
 
   public addTime(): void{
-    console.log('Saving this: ' + this.formInput);
+    const measure: Measure = {
+      date: new Date(),
+      measure: this.formInput
+    }
+    this.sample.measures.push(measure);
+    this.complete.emit(this.sample);
+    this.formInput = null;
   }
 }

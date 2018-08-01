@@ -9,7 +9,7 @@
 <ion-content padding>
   <ion-slides pager>
     <ion-slide *ngFor="let item of trainings">
-      <trainingview [sample]=item (completed)="addTraining($event)"></trainingview>></trainingview>
+      <trainingview [sample]=item (complete)="addTraining($event)"></trainingview>
     </ion-slide>
   </ion-slides>
 </ion-content>

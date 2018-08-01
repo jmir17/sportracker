@@ -19,4 +19,12 @@ export class AboutPage {
     },800);
   }
 
+  public addTraining(training: Training): void{
+    this.trainings.forEach(element => {
+      if (element.id === training.id){
+        this.trainings[this.trainings.indexOf(element)].measures = training.measures;
+        this.storageProvider.saveTrainings(this.trainings);
+      }
+    });
+  }
 }
