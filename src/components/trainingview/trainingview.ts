@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import Training from '../../models/training';
 
 /**
@@ -13,6 +13,7 @@ import Training from '../../models/training';
 })
 export class TrainingviewComponent {
   @Input() sample: Training;
+  @Output() complete: Training;
   private formInput: Number;
 
   constructor() {

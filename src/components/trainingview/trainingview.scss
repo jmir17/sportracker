@@ -6,6 +6,14 @@ trainingview {
                 -webkit-appearance: none;
                 margin: 0;
             }
+            width: 80%;
+            float: left;
+            border-bottom: 1px solid gray;
         }
+        button{
+            width: 15%;
+            float: right;
+        }
+
     }
 }
