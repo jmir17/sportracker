@@ -9,8 +9,10 @@ export class StorageProvider {
   constructor(public storage: Storage){
     this.trainings = new Array();
     storage.get('data').then((value) => {
-      const jsonObject = JSON.parse(value);
-      this.trainings = jsonObject.dataset;
+      if (value){
+        const jsonObject = JSON.parse(value);
+        this.trainings = jsonObject.dataset;
+      }
     });
   }
 
