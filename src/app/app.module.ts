@@ -10,8 +10,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { TrainingviewComponent } from '../components/trainingview/trainingview';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { StorageProvider } from '../providers/storage/storage';
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -38,8 +36,6 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     StorageProvider
   ]
