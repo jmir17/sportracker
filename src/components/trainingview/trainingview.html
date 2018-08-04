@@ -4,7 +4,7 @@
 
   <ion-list inset>
     <ion-item-sliding *ngFor="let item of sample.measures" (ionSwipe)="delete(item)">
-      <ion-item><h1>{{item.date | date: 'EEE, MMM d'}} - {{ item.measure }}</h1></ion-item>
+      <ion-item (press)="tomas(item)"><h1>{{item.date | date: 'EEE, MMM d'}} - {{ item.measure }}</h1></ion-item>
       <ion-item-options>
         <button color="danger" ion-button expandable (click)="deleteGoal(item)">Delete</button>
       </ion-item-options>
